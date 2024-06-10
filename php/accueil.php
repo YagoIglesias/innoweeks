@@ -68,6 +68,49 @@
         <h2 id="co2-restant">Il vous reste <?php echo $co2remaining;?> kg de Co2 disponible</h2>
 
       </div>
+
+      <section class="historique">
+        <h2>Vos voyages</h2>
+
+        <?php
+          $counter = 0;
+          $table = $connector->query("SELECT * FROM `t_voyage` WHERE `numeroAVS` LIKE '$numeroAVS'");
+
+          // checker si il y a des voyages
+          if($table->rowCount() == 0){
+            echo "Vous n'avez pas effectue de voyage";
+          }
+          else{
+            echo "<table>";
+            echo "<tr>";
+            echo "<th>Lieu de départ  </th>";
+            echo "<th>Lieu d'arrivée </th>";
+            echo "<th class='datedepart'>Date de départ  </th>";
+            echo "<th class='datearrivee'>Date d'arrivée  </th>";
+            echo "<th class='motif'>Motif  </th>";
+            echo "<th class='coutco2'>Coût CO2  </th>";
+            echo "</tr>";
+            foreach($table as $row)
+            {
+              // voyages
+              echo "<tr>";
+              echo "<td> $row[voyDepart]</td>";
+              echo "<td>".$row["voyArrive"]."</td>";
+              echo "<td class='datedepart'> $row[voyDateDepart] </td>";
+              echo "<td class='datearrivee'> $row[voyDateArrive] </td>";
+              echo "<td class='motif'> $row[voyMotif] </td>";
+              echo "<td class='coutco2'> $row[voyCoutCO2] </td>";
+              echo "</tr>";
+            }
+            echo "</table>";
+          }
+        ?>
+
+
+
+      </section>
+
+
     </main>
     <footer>
       <div class="copyright">
