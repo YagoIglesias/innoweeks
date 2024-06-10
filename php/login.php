@@ -21,7 +21,7 @@
             $result = $req->fetchALL(PDO::FETCH_ASSOC);
             $_SESSION['numeroAVS'] = $result[0]["numeroAVS"];
 
-            header("Location: ../html/accueil.html");
+            header("Location: ../php/accueil.php");
 
         }else {
             echo "ERREUR DE CONNEXION";

@@ -1,4 +1,4 @@
-﻿<?php 
+﻿<?php
     // nom serveur
     $serverName = "localhost";
     // identifant
@@ -15,7 +15,6 @@
         die('Erreur : ' . $e->getMessage());
     }
 ?>
-
 
 
 
