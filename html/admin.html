@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <?php
+ include '../php/connexion.php'; 
+  ?>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Se connecter - Swiss Carbon Footprint</title>
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img
+        src="../ressources/Images/confederation.png"
+        alt="confederation-logo"
+        class="confederation-logo"
+        />
+        <h1><a class= "headerA" href="../html/login.html"> Swiss Carbon Footprint</a></h1>
+      </div>
+    </header>
+    <main>
+      <div class="login-container">
+        <h2>Se connecter</h2>
+        <div class="auth-content">
+          <form action="../php/loginAdmin.php" method="post">
+            <div class="box-username">
+              <label for="numeroAVS">Login :</label>
+              <input
+                type="text"
+                id="numeroAVS"
+                name="numeroAVS"
+                title="Format attendu : 756.1234.1234.12"
+                maxlength="16"
+                placeholder="756.4567.891.23"
+                required
+              />
+            </div>
+            <div class="box-password">
+              <label for="password">Mot de passe :</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Insérez votre mot de passe"
+                required
+              />
+            </div>
+            <div class="box-valider">
+              <button type="submit">Connexion</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="copyright">
+        <p>
+          Copyright © 2024 - Tous droits réservés.
+        </p>
+      </div>
+      <div class="contact-footer">
+        <a href="https://www.admin.ch/gov/fr/accueil/service/contacts.html">
+          <strong> Contacts </strong> 
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
