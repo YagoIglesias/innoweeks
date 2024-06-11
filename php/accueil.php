@@ -79,6 +79,9 @@
 
           $table = $connector->query("SELECT * FROM `t_voyage` WHERE `numeroAVS` LIKE '$numeroAVS'");
 
+          $date_string = null;
+          
+          
           // checker si il y a des voyages
           if($table->rowCount() == 0){
             echo "Vous n'avez pas effectue de voyage";
@@ -99,8 +102,14 @@
               echo "<tr>";
               echo "<td>".$row["voyDepart"]."</td>";
               echo "<td>".$row["voyArrive"]."</td>";
-              echo "<td class='datedepart'>".$row["voyDateDepart"]."</td>";
-              echo "<td class='datearrivee'>".$row["voyDateArrive"]."</td>";
+              $date_string = $row["voyDateDepart"];
+              $date = new DateTime($date_string,new DateTimeZone('UTC'));
+              $new_format = $date->format('m/d/Y H:i');
+              echo "<td class='datedepart'>".$new_format."</td>";
+              $date_string = $row["voyDateArrive"];
+              $date = new DateTime($date_string,new DateTimeZone('UTC'));
+              $new_format = $date->format('m/d/Y H:i');
+              echo "<td class='datearrivee'>".$new_format."</td>";
               echo "<td class='motif'>".$row["voyMotif"]."</td>";
               echo "<td class='coutco2'>".$row["voyCoutCO2"]."</td>";
               echo "</tr>";

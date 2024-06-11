@@ -1,11 +1,30 @@
 /******************************************BODY**********************************/
 body {
-  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Frutiger Neue For Post";
+  src: url("https://fonts.post.ch/frutigerneueforpost/v2/FrutigerNeueforPostW05-Bold.woff") format("woff");   
+  font-display: swap;
   background-image: url("../ressources/Images/fond.jpg");
   background-size: cover;
   display: flex;
   flex-direction: column;
   margin: 0;
+}
+
+p{
+  font-size: 20px;
+}
+a{
+  font-size: 20px;
+}
+label{
+  font-size: 18px;
+}
+h2{
+  font-size: 30px;
+}
+
+button{
+  font-size: 17px;
 }
 
 /**********************************HEADER************************************/
@@ -38,6 +57,7 @@ header h1 {
 .headerA{
 	color: black;
 	text-decoration: none;
+  font-size: 38px;
 }
 
 
@@ -119,6 +139,7 @@ header h1 {
   align-content: center;
   text-decoration: none;
   justify-content: center;
+  font-size: 15px;
 }
 
 .box-valider button {
@@ -126,7 +147,7 @@ header h1 {
   border-radius: 10px;
   padding: 10px 50px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 17px;
 }
 .box-valider button:hover {
   background-color: rgba(255, 255, 255, 0.205);
