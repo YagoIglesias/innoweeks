@@ -49,12 +49,15 @@
   </head>
   <body>
     <header>
-      <h1><a class= "headerA" href="../html/login.html"> Swiss Carbon Footprint</a></h1>
-      <img
+      <div class="logo">
+        <img
         src="../ressources/Images/confederation.png"
         alt="confederation-logo"
         class="confederation-logo"
-      />
+        />
+        <h1><a class= "headerA" href="../html/login.html"> Swiss Carbon Footprint</a></h1>
+      </div>
+      <button class="deconnexion" type="button" onclick="location.href='../html/login.html'">Deconnexion</button>
     </header>
     <main>
       <div class="main-container">
@@ -73,7 +76,7 @@
         <h2>Vos voyages</h2>
 
         <?php
-          $counter = 0;
+
           $table = $connector->query("SELECT * FROM `t_voyage` WHERE `numeroAVS` LIKE '$numeroAVS'");
 
           // checker si il y a des voyages
@@ -94,36 +97,30 @@
             {
               // voyages
               echo "<tr>";
-              echo "<td> $row[voyDepart]</td>";
+              echo "<td>".$row["voyDepart"]."</td>";
               echo "<td>".$row["voyArrive"]."</td>";
-              echo "<td class='datedepart'> $row[voyDateDepart] </td>";
-              echo "<td class='datearrivee'> $row[voyDateArrive] </td>";
-              echo "<td class='motif'> $row[voyMotif] </td>";
-              echo "<td class='coutco2'> $row[voyCoutCO2] </td>";
+              echo "<td class='datedepart'>".$row["voyDateDepart"]."</td>";
+              echo "<td class='datearrivee'>".$row["voyDateArrive"]."</td>";
+              echo "<td class='motif'>".$row["voyMotif"]."</td>";
+              echo "<td class='coutco2'>".$row["voyCoutCO2"]."</td>";
               echo "</tr>";
             }
             echo "</table>";
           }
         ?>
 
-
-
       </section>
-
 
     </main>
     <footer>
       <div class="copyright">
         <p>
           Copyright © 2024 - Tous droits réservés.
-          <a href=""
-            ><strong>Mentions légales / Conditions Générales </strong></a
-          >
         </p>
       </div>
       <div class="contact-footer">
         <a href="https://www.admin.ch/gov/fr/accueil/service/contacts.html">
-          Contacts
+          <strong> Contacts </strong> 
         </a>
       </div>
     </footer>

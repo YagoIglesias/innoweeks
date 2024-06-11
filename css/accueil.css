@@ -15,6 +15,15 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 5px 15px;
+  position: fixed;
+  width: 100%;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .confederation-logo {
@@ -23,15 +32,26 @@ header {
 
 header h1 {
   color: black;
-  margin: 0;
+  margin-left: 15px;
 }
 
 .headerA{
-	
 	color: black;
 	text-decoration: none;
-	
 }
+
+.deconnexion{
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-right: 25px;
+}
+
 
 /*********************************PROGRESS BAR*********************************/
 .main-container{
@@ -143,7 +163,6 @@ footer {
   display: flex;
   flex-direction: column;
   margin-top: 263px;
-  position: fixed;
   bottom: 0;
   width:100%;
 }

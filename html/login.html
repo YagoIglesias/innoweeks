@@ -18,13 +18,14 @@
 
   <body>
     <header>
-      <h1><a class= "headerA" href="../html/login.html"> Swiss Carbon Footprint</a></h1>
-      <img
-        src="../ressources/images/confederation.png"
+      <div class="logo">
+        <img
+        src="../ressources/Images/confederation.png"
         alt="confederation-logo"
         class="confederation-logo"
-		
-      />
+        />
+        <h1><a class= "headerA" href="../html/login.html"> Swiss Carbon Footprint</a></h1>
+      </div>
     </header>
     <main>
       <div class="login-container">
@@ -59,12 +60,11 @@
             </div>
           </form>
           <div class="create_and_forget">
-            <div class="creationcompte">
-              <a href="../html/register.html">Créer un compte</a>
-            </div>
-            <div class="oubliecompte">
-              <a href="../html/forgetPassword.html" class="bouton">Mot de passe oublié</a>
-            </div>
+
+            <button class="creationcompte" type="button" onclick="location.href='../html/register.html'">Créer un compte</button>
+
+            <button class="oubliecompte" type="button" onclick="location.href='../html/forgetPassword.html'">Mot de passe oublié</button>
+            
           </div>
         </div>
       </div>
@@ -73,14 +73,11 @@
       <div class="copyright">
         <p>
           Copyright © 2024 - Tous droits réservés.
-          <a href=""
-            ><strong>Mentions légales / Conditions Générales </strong></a
-          >
         </p>
       </div>
       <div class="contact-footer">
         <a href="https://www.admin.ch/gov/fr/accueil/service/contacts.html">
-          Contacts
+          <strong> Contacts </strong> 
         </a>
       </div>
     </footer>

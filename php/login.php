@@ -24,9 +24,21 @@
             header("Location: ../php/accueil.php");
 
         }else {
-            echo "ERREUR DE CONNEXION";
+
+            echo '<script language="javascript">';
+            echo 'alert("Numéro AVS ou mot de passe incorrect !");';
+            echo 'document.location.href="../html/login.html"';
+            echo '</script>';  
+            
+            //echo "ERREUR DE CONNEXION";
         }
     }else{
-        echo"Pas possible desolé"; 
+
+        echo '<script language="javascript">';
+        echo 'alert("ACCÈS INTERDIT !");';
+        echo 'document.location.href="../html/login.html"';
+        echo '</script>';  
+
+        //echo"Pas possible desolé"; //pas possible d'acceder à la page de checking de connexion
     }
 ?>

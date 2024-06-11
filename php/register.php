@@ -34,18 +34,48 @@ if(isset($_POST['numeroAVS']) && isset($_POST['password']) && isset($_POST['pass
                 $passwordHash = hash('sha256', $password);
                 //changement du mot de passe
                 $req = $connector->query("UPDATE `t_person` SET `perMotDePasse` = '$passwordHash' WHERE `numeroAVS` = '$numeroAVS' AND `perCodeVerification` = '$verificationCode'");
+
+                // alert pour indiquer que le compte est créer et l'utilisateur est renvoyée au login pour se connecter 
+                echo '<script language="javascript">';
+                echo 'alert("compte créé, vous aller être renvoyer a la page de login");';
+                echo 'document.location.href="../html/login.html"';
+                echo '</script>';
+
                 //redirection au login
-                header("Location: ../html/login.html");
+                //header("Location: ../html/login.html");
+                
             }else{
-                echo "Les mots de passe sont différents";
+
+                echo '<script language="javascript">';
+                echo 'alert("Les mots de passe sont différents !");';
+                echo 'document.location.href="../html/register.html"';
+                echo '</script>';
+                //echo "Les mots de passe sont différents";
+
             }
         }else{
-            echo "Code de vérification incorrect.";
+            
+            echo '<script language="javascript">';
+            echo 'alert("Code de vérification incorrect !");';
+            echo 'document.location.href="../html/register.html"';
+            echo '</script>';
+
+            //echo "Code de vérification incorrect.";
         } 
     }else{
-        echo "Numero AVS incorrect.";
+
+        echo '<script language="javascript">';
+        echo 'alert("Numero AVS incorrect !");';
+        echo 'document.location.href="../html/register.html"';
+        echo '</script>';
+
+        //echo "Numero AVS incorrect.";
     }
 }else{
-    echo "Remplissez tous les champs.";
+    
+    echo '<script language="javascript">';
+    echo 'alert("ACCÈS INTERDIT !");';
+    echo 'document.location.href="../html/register.html"';
+    echo '</script>'; 
 }
 ?>

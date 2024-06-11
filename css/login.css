@@ -15,6 +15,15 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 5px 15px;
+  position: fixed;
+  width: 100%;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .confederation-logo {
@@ -23,22 +32,21 @@ header {
 
 header h1 {
   color: black;
-  margin: 0;
+  margin-left: 15px;
 }
 
 .headerA{
-	
 	color: black;
 	text-decoration: none;
-	
 }
+
 
 
 /******************************FORMULAIRE************************************/
 .login-container {
   max-width: 500px;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 250px;
   padding: 20px;
   background-color: #f9f9f9;
   border: 2px solid #ddd;
