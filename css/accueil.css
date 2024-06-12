@@ -125,7 +125,7 @@ overflow: hidden;
 }
 
 /********************************Historique***********************************/
-.historique{
+.historique, .formulaire{
   max-width: 1150px;
   margin: auto;
   margin-top: 150px;

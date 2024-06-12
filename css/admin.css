@@ -1,0 +1,220 @@
+/******************************************BODY**********************************/
+body {
+    font-family: "Frutiger Neue For Post";
+    src: url("https://fonts.post.ch/frutigerneueforpost/v2/FrutigerNeueforPostW05-Bold.woff") format("woff");   
+    font-display: swap;
+    background-image: url("../ressources/Images/fond.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+p{
+font-size: 20px;
+}
+a{
+font-size: 20px;
+}
+
+/**********************************HEADER************************************/
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    position: fixed;
+    width: 100%;
+}
+
+.logo{
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.confederation-logo {
+max-width: 180px;
+}
+
+header h1 {
+color: black;
+margin-left: 15px;
+font-size: 30px;
+
+}
+
+.headerA{
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.deconnexion{
+font-size: 15px;
+font-weight: bold;
+color: black;
+text-decoration: none;
+cursor: pointer;
+padding: 12px;
+border: 1px solid #ddd;
+border-radius: 10px;
+margin-right: 25px;
+}
+
+/**********************************SAISIES***********************************/
+.formulaire{
+    max-width: 1150px;
+    margin: auto;
+    margin-top: 150px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+/*a checker */
+label{
+    padding: 5px;
+    font-size: 20px;
+}
+
+/*********USERNAME*********/
+
+.box-username {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    width: 30%;
+    margin-left: 109px;
+}
+  
+input {
+    border: 1px solid #e7e7e9;
+    border-radius: 5px;
+    height: 35px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    padding: 0px 15px;
+    font-size: 15px;
+}
+
+/*********LIEU DEPART*********/
+.box-lieuDepart{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    width: 30%;
+}
+
+/*********LIEU ARRIVE*********/
+.box-lieuArrive{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    width: 30%;
+}
+
+/*********DATE DEPART*********/
+.box-dateDepart{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    width: 30%;
+}
+
+/*********DATE ARRIVE*********/
+.box-dateArrive{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    width: 30%;
+}
+
+/*********MOTIF*********/
+.box-motif{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    width: 30%;
+}
+
+/*********COUTCO2*********/
+.box-coutCO2{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    width: 30%;
+}
+
+/********VALIDER*********/
+.box-valider {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    text-decoration: none;
+    justify-content: center;
+    font-size: 15px;
+    margin-top: 20px;
+}
+  
+.box-valider button {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.box-valider button:hover {
+    background-color: rgba(255, 255, 255, 0.205);
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+textarea{
+    resize: none;
+    
+}
+
+
+/**********************************FOOTER***********************************/
+footer {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    margin-top: 100px;
+    width:100%;
+}
+  
+.copyright,
+.contact-footer {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+  
+.copyright a {
+    text-decoration: none;
+    color: black;
+}
+  
+.contact-footer a {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+}
