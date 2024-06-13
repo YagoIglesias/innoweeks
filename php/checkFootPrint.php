@@ -2,13 +2,20 @@
   // session  
   session_start();
   // blocker accese si on est pas loguer
-  include("../php/block.php");
+  include("../php/blockAdmin.php");
   // connexion db
   include ('../php/connexion.php');
   // numero avs de la personne connecter
-  $numeroAVS = $_SESSION['numeroAVS']; 
+  $numeroAVS = $_GET['numeroAVS'];
+  $lieuDepart = $_GET['aerodep'];
+  $lieuArrive = $_GET['aeroarr'];
+  $dateDepart = $_GET['datedep'];
+  $dateArrive = $_GET['datearr'];
+  $motif = $_GET['motif'];
+  $coutCO2 = $_GET['coutco2'];
+  
   // addition du co2 par voyage
-  $result = 0;
+  $totalCo2Used = 0;
   $co2remaining = 0;
 
   // requete pour recuperer le cout en co2 de la personne 
@@ -19,18 +26,20 @@
     // stocker la valeur 
     $finquot = $quot['voyCoutCO2'];
     // additioner la valeur 
-    $result = $result + $finquot;
+    $totalCo2Used = $totalCo2Used + $finquot;
   }
 
   // requete pour recupere le quota max par personne
-  $result = $connector->query("SELECT `perQuotaDisponible` FROM `t_person` WHERE `numeroAVS` LIKE '$numeroAVS'");
+  $result = $connector->query("SELECT * FROM `t_person` WHERE `numeroAVS` LIKE '$numeroAVS'");
   // parrcourir le tableau du resultat de la requete
   foreach($result as $row){
     // quota disponible
     $max = $row['perQuotaDisponible'];
+    $nom = $row['perNom'];
+    $prenom = $row['perPrenom'];
   }
 
-  $co2remaining = $max - $result;
+  $co2remaining = $max - $totalCo2Used;
 
 ?>
 <!DOCTYPE html>
@@ -55,25 +64,12 @@
         alt="confederation-logo"
         class="confederation-logo"
         />
-        <h1><a class= "headerA" href="../html/login.html"> Swiss Carbon Footprint</a></h1>
+        <h1><a class= "headerA" href="../php/admin.php"> Swiss Carbon Footprint</a></h1>
       </div>
-      <button class="deconnexion" type="button" onclick="location.href='../php/logout.php'">Deconnexion</button>
     </header>
     <main>
-      <div class="main-container">
-        <h2>Votre empreinte carbone</h2>
-        <div class="container-progress-bar">
-          <label id="label-left" for="file"><?php echo $result;?></label>
-          <progress id="file" max="<?php echo $max;?>" value="<?php echo $result;?>"></progress>
-          <label id="label-right" for="file">4000</label>
-        </div>
-
-        <h2 id="co2-restant">Il vous reste <?php echo $co2remaining;?> kg de Co2 disponible</h2>
-
-      </div>
-
       <section class="historique">
-        <h2>Vos voyages</h2>
+        <h2>Voyages effectués de <?php echo $nom .' '. $prenom;?> </h2>
 
         <?php
 
@@ -114,9 +110,49 @@
               echo "<td class='coutco2'>".$row["voyCoutCO2"]."</td>";
               echo "</tr>";
             }
-            echo "</table>";
-          }
+            echo "</table>";  
+        }
         ?>
+        <p style="text-align:end;margin-right:35px;font-size:28px">C02 Restant<strong><?php echo ' '.$co2remaining;?></strong> <p>
+
+        <h2>Voyage demandé</h2>
+        <?php
+            $table = $connector->query("SELECT * FROM `t_voyage` WHERE `numeroAVS` LIKE '$numeroAVS'");
+            $date_string = null;
+            // checker si il y a des voyages
+            if($table->rowCount() == 0){
+                echo "Vous n'avez pas effectue de voyage";
+            }
+            else{
+                echo "<table>";
+                echo "<tr>";
+                echo "<th>Lieu de départ  </th>";
+                echo "<th>Lieu d'arrivée </th>";
+                echo "<th class='datedepart'>Date de départ  </th>";
+                echo "<th class='datearrivee'>Date d'arrivée  </th>";
+                echo "<th class='motif'>Motif  </th>";
+                echo "<th class='coutco2'>Coût CO2  </th>";
+                echo "</tr>";
+                // voyages
+                echo "<tr>";
+                echo "<td>".$lieuDepart."</td>";
+                echo "<td>".$lieuArrive."</td>";
+                $date_string = $dateDepart;
+                $date = new DateTime($date_string,new DateTimeZone('UTC'));
+                $new_format = $date->format('m/d/Y H:i');
+                echo "<td class='datedepart'>".$new_format."</td>";
+                $date_string = $dateArrive;
+                $date = new DateTime($date_string,new DateTimeZone('UTC'));
+                $new_format = $date->format('m/d/Y H:i');
+                echo "<td class='datearrivee'>".$new_format."</td>";
+                echo "<td class='motif'>".$motif."</td>";
+                echo "<td class='coutco2'><strong>".$coutCO2."</strong></td>";
+                echo "</tr>";
+                echo "</table>";  
+            }
+        
+        ?>
+
       </section>
 
     </main>
