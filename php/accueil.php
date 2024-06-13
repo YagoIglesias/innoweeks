@@ -8,7 +8,7 @@
   // numero avs de la personne connecter
   $numeroAVS = $_SESSION['numeroAVS']; 
   // addition du co2 par voyage
-  $result = 0;
+  $quotDispo = 0;
   $co2remaining = 0;
 
   // requete pour recuperer le cout en co2 de la personne 
@@ -19,7 +19,7 @@
     // stocker la valeur 
     $finquot = $quot['voyCoutCO2'];
     // additioner la valeur 
-    $result = $result + $finquot;
+    $quotDispo = $quotDispo + $finquot;
   }
 
   // requete pour recupere le quota max par personne
@@ -30,7 +30,7 @@
     $max = $row['perQuotaDisponible'];
   }
 
-  $co2remaining = $max - $result;
+  $co2remaining = $max - $quotDispo;
 
 ?>
 <!DOCTYPE html>
@@ -63,8 +63,8 @@
       <div class="main-container">
         <h2>Votre empreinte carbone</h2>
         <div class="container-progress-bar">
-          <label id="label-left" for="file"><?php echo $result;?></label>
-          <progress id="file" max="<?php echo $max;?>" value="<?php echo $result;?>"></progress>
+          <label id="label-left" for="file"><?php echo $quotDispo;?></label>
+          <progress id="file" max="<?php echo $max;?>" value="<?php echo $quotDispo;?>"></progress>
           <label id="label-right" for="file">4000</label>
         </div>
 
