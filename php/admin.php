@@ -37,7 +37,7 @@
         />
         <h1><a class= "headerA"> Swiss Carbon Footprint</a></h1>
       </div>
-      <button class="deconnexion" type="button" onclick="location.href='../php/logout.php'">Deconnexion</button>
+      <button class="deconnexion" type="button" onclick="location.href='../php/logoutAdmin.php'">Déconnexion</button>
     </header>
     <main>
       <section class="formulaire">
