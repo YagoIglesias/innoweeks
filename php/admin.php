@@ -65,6 +65,8 @@
                   id="lieuDepart"
                   name="lieuDepart"
                   placeholder="Genève(GVA)"
+                  pattern="^[A-Z](.)+[\(A-Z\)]{3,}[^\d]?"
+                  title="Format attendu : Nom de l'aéroport(IATA)"
                   required
                 />
               </div>
@@ -76,6 +78,8 @@
                   id="lieuArrive"
                   name="lieuArrive"
                   placeholder="San Sebastian(EAS)"
+                  pattern="^[A-Z](.)+[\(A-Z\)]{3,}[^\d]?"
+                  title="Format attendu : Nom de l'aéroport(IATA)"
                   required
                 />
               </div>

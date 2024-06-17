@@ -219,9 +219,8 @@ footer {
   background-color: white;
   display: flex;
   flex-direction: column;
-  margin-top: 221px;
+  margin-top: 145px;
   align-content: flex-end;
-  position: fixed;
   bottom: 0;
   width:100%;
 }
