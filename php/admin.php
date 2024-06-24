@@ -67,21 +67,29 @@
                   placeholder="Genève(GVA)"
                   pattern="^[A-Z](.)+[\(A-Z\)]{3,}[^\d]?"
                   title="Format attendu : Nom de l'aéroport(IATA)"
+                  value="Genève(GVA)"
                   required
                 />
               </div>
   
               <div class="box-lieuArrive">
                 <label for="lieuArrive">Aéroport d'arrivée </label>
-                <input
-                  type="text"
-                  id="lieuArrive"
+                <select id="lieuArrive"
                   name="lieuArrive"
-                  placeholder="San Sebastian(EAS)"
                   pattern="^[A-Z](.)+[\(A-Z\)]{3,}[^\d]?"
                   title="Format attendu : Nom de l'aéroport(IATA)"
-                  required
-                />
+                  required>
+                  <option value="">Aéroport de destination</option>
+                  <option value="San Sebastian(EAS)">San Sebastian(EAS)</option>
+                  <option value="Tokyo(NRT)">Tokyo(NRT)</option>
+                  <option value="Philadelphia(PHL)">Philadelphia(PHL)</option>
+                  <option value="Sucre(SRE)">Sucre(SRE)</option>
+                  <option value="Nairobi(NBO)">Nairobi(NBO)</option>
+                  <option value="Oulan-Bator(UBN)">Oulan-Bator(UBN)</option>
+                  <option value="Haneda(HND)">Haneda(HND)</option>
+                  <option value="Malaga(AGP)">Malaga(AGP)</option>
+                  <option value="Prague(PRG)">Prague(PRG)</option>
+                </select>
               </div>
             </div>
 
