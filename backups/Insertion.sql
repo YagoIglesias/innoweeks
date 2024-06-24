@@ -6,7 +6,8 @@ INSERT INTO t_person (numeroAVS,perNom,perPrenom,perSexe,perDateNaissance,perNat
 ("756.9731.4795.90" , "Sierro"   , "Félix" , TRUE, "1998-04-07" , "Suisse" , "Vevey", "Vevey", 4000.00 , NULL),
 ("756.4488.7226.70" , "Willy"   , "Boly" , TRUE, "1998-04-07" , "Suisse" , "Vevey", "Vevey", 4000.00 , NULL),
 ("756.4456.6576.96" , "Lois"   , "Mateo" , TRUE, "1998-04-07" , "Suisse" , "Vevey", "Vevey", 4000.00 , NULL),
-("756.3450.8577.98" , "Josemaria"   , "Gutierrez" , TRUE, "1998-04-07" , "Suisse" , "Vevey", "Vevey", 4000.00 , NULL);
+("756.3450.8577.98" , "Josemaria"   , "Gutierrez" , TRUE, "1998-04-07" , "Suisse" , "Vevey", "Vevey", 4000.00 , NULL),
+("756.0000.0000.00" , "Test"   , "Innoweeks" , FALSE, "2024-06-25" , "Suisse" , "Vevey", "Vevey", 4000.00 , NULL);
 
 
 /*Voyage*/
